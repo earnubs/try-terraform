@@ -1,9 +1,9 @@
-Getting started
+# Getting started
 
 You'll need a triton account name and key id (ssh fingerprint) from ops, head over
 to #ops-chat and chat about that.
 
-Install Terraform:
+Install Terraform https://www.terraform.io/:
 
 ```
 brew install terraform
