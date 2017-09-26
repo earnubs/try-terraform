@@ -33,7 +33,31 @@ provider "triton" {
 }
 
 resource "triton_machine" "fa-web" {
-  name    = "${var.name}"
+  name    = "${var.name}-app"
+  package = "${var.triton_package}"
+  image   = "${var.triton_image}"
+
+  networks = "${var.triton_networks}"
+
+  provisioner "local-exec" {
+    command = "echo ${triton_machine.fa-web.primaryip}"
+  }
+}
+
+resource "triton_machine" "fa-lb" {
+  name    = "${var.name}-lb"
+  package = "${var.triton_package}"
+  image   = "${var.triton_image}"
+
+  networks = "${var.triton_networks}"
+
+  provisioner "local-exec" {
+    command = "echo ${triton_machine.fa-web.primaryip}"
+  }
+}
+
+resource "triton_machine" "fa-mysql" {
+  name    = "${var.name}-mysql"
   package = "${var.triton_package}"
   image   = "${var.triton_image}"
 

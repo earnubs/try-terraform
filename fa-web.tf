@@ -2,7 +2,7 @@ variable "account" {}
 
 variable "key_id" {}
 
-output "ip" {
+output "fa-web-ip" {
   value = "${module.my-fa-web.ip}"
 }
 
