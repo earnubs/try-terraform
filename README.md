@@ -17,7 +17,7 @@ account = "stephen"
 key_id  = "0e:a2:8f:a5:ca:a6:c6:5f:b7:be:d2:ef:c4:02:bc:bc"
 ```
 
-Spin up 3 instance, 2 of which (fa-mysql & fa-lb) implicitly depend on fa-web,
+Spin up `fa-web` module -- 3 smartos instances, 2 of which (fa-mysql & fa-lb) implicitly depend on fa-web,
 and a such will be spun up once fa-web is complete (but then concurrently).
 
 ```
